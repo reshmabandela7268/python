@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Secure Notepad</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Secure Notepad</h1>
+            <div>
+                <button onclick="toggleTheme()">Toggle Theme</button>
+                <button id="logout-btn" onclick="logout()">Logout</button>
+            </div>
+        </div>
+
+        <div id="auth-content" style="display: none;">
+            <div class="auth-container">
+                <div class="auth-tabs">
+                    <button class="auth-tab active" onclick="switchTab('login')">Login</button>
+                    <button class="auth-tab" onclick="switchTab('signup')">Sign Up</button>
+                </div>
+
+                <div id="login-form" class="auth-form active">
+                    <div class="form-group">
+                        <label for="login-email">Email</label>
+                        <input type="email" id="login-email" placeholder="Enter your email">
+                    </div>
+                    <div class="form-group">
+                        <label for="login-password">Password</label>
+                        <input type="password" id="login-password" placeholder="Enter your password">
+                    </div>
+                    <button onclick="login()" class="auth-button">Login</button>
+                </div>
+
+                <div id="signup-form" class="auth-form">
+                    <div class="form-group">
+                        <label for="signup-email">Email</label>
+                        <input type="email" id="signup-email" placeholder="Enter your email">
+                    </div>
+                    <div class="form-group">
+                        <label for="signup-password">Password</label>
+                        <input type="password" id="signup-password" placeholder="Choose a password">
+                    </div>
+                    <button onclick="signUp()" class="auth-button">Create Account</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="app-content" style="display: none;">
+            <textarea id="note-content" placeholder="Write your notes here..."></textarea>
+            <button onclick="saveNote()">Save Note</button>
+            <div id="notes-list"></div>
+        </div>
+
+        <div id="initial-message">
+            Initializing notepad...
+        </div>
+    </div>
+    <script type="module" src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,288 @@
+:root {
+    --bg-color: #f5f6fa;
+    --text-color: #2f3640;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --primary-color: #4834d4;
+    --success-color: #6ab04c;
+    --error-color: #eb4d4b;
+    --card-bg: #ffffff;
+}
+
+.dark-theme {
+    --bg-color: #2f3640;
+    --text-color: #f5f6fa;
+    --shadow-color: rgba(0, 0, 0, 0.3);
+    --primary-color: #686de0;
+    --card-bg: #353b48;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: all 0.3s ease;
+    margin: 0;
+    padding: 20px;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 30px;
+    background: var(--card-bg);
+    box-shadow: 0 8px 30px var(--shadow-color);
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid var(--shadow-color);
+}
+
+.header h1 {
+    font-size: 2.2em;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+textarea {
+    width: 100%;
+    height: 200px;
+    margin-bottom: 20px;
+    padding: 16px;
+    border: 2px solid var(--shadow-color);
+    border-radius: 8px;
+    background-color: var(--card-bg);
+    color: var(--text-color);
+    resize: vertical;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(72, 52, 212, 0.2);
+}
+
+button {
+    padding: 10px 20px;
+    margin-right: 10px;
+    border: none;
+    border-radius: 6px;
+    background-color: var(--primary-color);
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px var(--shadow-color);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+.note-card {
+    padding: 20px;
+    margin-bottom: 20px;
+    border: 1px solid var(--shadow-color);
+    border-radius: 8px;
+    background: var(--card-bg);
+    transition: all 0.3s ease;
+}
+
+.note-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px var(--shadow-color);
+}
+
+.note-card p {
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.note-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.note-actions button {
+    flex: 1;
+    min-width: 80px;
+}
+
+.auth-section {
+    margin-bottom: 30px;
+    padding: 25px;
+    border: 1px solid var(--shadow-color);
+    border-radius: 8px;
+    background: var(--card-bg);
+    transition: all 0.3s ease;
+}
+
+.auth-section:hover {
+    box-shadow: 0 5px 15px var(--shadow-color);
+}
+
+.auth-input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 2px solid var(--shadow-color);
+    border-radius: 6px;
+    background-color: var(--card-bg);
+    color: var(--text-color);
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.auth-input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(72, 52, 212, 0.2);
+}
+
+.auth-section h2 {
+    margin-bottom: 20px;
+    color: var(--primary-color);
+    font-size: 1.5em;
+}
+
+#initial-message {
+    text-align: center;
+    padding: 40px;
+    font-size: 1.2em;
+    color: var(--text-color);
+}
+
+.auth-container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.auth-tabs {
+    display: flex;
+    margin-bottom: 20px;
+    border-bottom: 2px solid var(--shadow-color);
+}
+
+.auth-tab {
+    flex: 1;
+    padding: 15px;
+    background: none;
+    color: var(--text-color);
+    border: none;
+    border-bottom: 2px solid transparent;
+    margin-bottom: -2px;
+    opacity: 0.7;
+}
+
+.auth-tab:hover {
+    opacity: 1;
+    transform: none;
+    box-shadow: none;
+}
+
+.auth-tab.active {
+    opacity: 1;
+    border-bottom-color: var(--primary-color);
+}
+
+.auth-form {
+    display: none;
+    animation: fadeIn 0.3s ease;
+}
+
+.auth-form.active {
+    display: block;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid var(--shadow-color);
+    border-radius: 8px;
+    background: var(--card-bg);
+    color: var(--text-color);
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(72, 52, 212, 0.2);
+    outline: none;
+}
+
+.auth-button {
+    width: 100%;
+    padding: 14px;
+    font-size: 16px;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.auth-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px var(--shadow-color);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    .header {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+
+    .note-actions {
+        flex-direction: column;
+    }
+
+    button {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+}
