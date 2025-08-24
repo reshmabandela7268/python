@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Internship Finder for Freshers</title>
+
+  <style>
+ .internships {
+  background: url('https://cdn.prod.website-files.com/640959cbe7c9a7de76661a7c/6461dc48ff7a53441226c8d3_AdobeStock_172189986.png.jpeg') center/cover no-repeat;
+  min-height: 100vh;
+  width: 100%;
+  position: relative;
+}
+
+
+  .internships::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(255,255,255,0.25); /* Brighter overlay, no blur, image remains clear */
+    z-index: 0;
+  }
+  .internships > * {
+    position: relative;
+    z-index: 1;
+  }
+  .contact {
+    background: url('https://www.rootsinterns.com/wp-content/uploads/2024/04/pexels-tirachard-kumtanom-733856-1.jpg') center/cover no-repeat;
+    min-height: 100vh;
+    width: 100%;
+    position: relative;
+  }
+  .contact > * {
+    position: relative;
+    z-index: 1;
+  }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #ebe8eeff;
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: #222;
+      color: rgba(233, 198, 198, 0.9);
+      padding: 20px;
+      text-align: center;
+    }
+
+    nav {
+      margin-top: 10px;
+    }
+
+    nav label {
+      color: rgba(223, 221, 150, 0.9);
+      margin: 0 15px;
+      text-decoration: none;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    nav label:hover {
+      text-decoration: underline;
+    }
+
+    section {
+      padding: 30px 20px;
+      display: none;
+    }
+
+    #home:checked ~ .content .home,
+    #internships:checked ~ .content .internships,
+    #contact:checked ~ .content .contact {
+      display: block;
+    }
+
+    /* Home Section */
+    .home {
+      background: url('https://res.cloudinary.com/purnesh/image/upload/f_auto/v1510839421/timesjobs0.jpg') center/cover no-repeat;
+      min-height: 100vh;
+      width: 100%;
+    }
+
+    .hero {
+      background: none;
+      color: rgb(237, 231, 230);
+      padding: 40px;
+      border-radius: 8px;
+      text-align: center;
+      margin-bottom: 30px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero h2 {
+      font-size: 2em;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      font-size: 1.1em;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .features {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      margin-top: 30px;
+    }
+
+    .feature-box {
+      background-color: rgb(109, 181, 181);
+      padding: 20px;
+      margin: 10px;
+      flex: 1 1 250px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+      border-radius: 6px;
+      text-align: center;
+    }
+
+    .feature-box h3 {
+      margin-bottom: 10px;
+      color: #444;
+    }
+
+    .feature-box p {
+      color: #0e0707;
+    }
+
+    .card {
+      background: none;
+      color: rgb(16, 19, 19);
+      padding: 15px;
+      margin-bottom: 20px;
+      border-radius: 5px;
+      box-shadow: 0 0 5px rgba(7, 5, 5, 0.8);
+    }
+
+    .card h3 {
+      margin-bottom: 10px;
+    }
+
+    .card a {
+      color: rgb(241, 7, 7);
+      text-decoration: none;
+    }
+
+    .card a:hover {
+      text-decoration: underline;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      max-width: 400px;
+    }
+
+    form input, form textarea {
+      margin-bottom: 10px;
+      padding: 10px;
+      border: 1px solid #0d71e4;
+      border-radius: 4px;
+    }
+
+    button {
+      padding: 10px;
+      background-color: #36cbe6ee;
+      color: rgb(3, 3, 3);
+      border: none;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #140202;
+      color: #fff;
+    }
+
+    footer {
+      background-color: #222;
+      color: rgb(224, 111, 177);
+      text-align: center;
+      padding: 10px;
+      margin-top: 30px;
+    }
+
+    /* Hide radio buttons */
+    input[type="radio"] {
+      display: none;
+    }
+
+    @media (max-width: 768px) {
+      .features {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .feature-box {
+        width: 90%;
+      }
+
+      .card {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hidden Radio Buttons -->
+  <input type="radio" name="nav" id="home" checked>
+  <input type="radio" name="nav" id="internships">
+  <input type="radio" name="nav" id="contact">
+
+  <header>
+    <h1>Internship Finder for Freshers</h1>
+    <nav>
+      <label for="home">Home</label>
+      <label for="internships">Internships</label>
+      <label for="contact">Contact</label>
+    </nav>
+  </header>
+
+  <div class="content">
+    <!-- Home Section -->
+    <section class="home">
+      <div class="hero">
+        <h2>Find the Right Internship for You</h2>
+        <p>A curated platform made for BTech 2nd-year students to explore beginner-friendly internships across various fields.</p>
+      </div>
+
+      <div class="features">
+        <div class="feature-box">
+          <h3>🎯 Tailored for Beginners</h3>
+          <p>No advanced skills needed — all internships are suited for early learners.</p>
+        </div>
+        <div class="feature-box">
+          <h3>📚 Curated Listings</h3>
+          <p>Internships handpicked from trusted platforms like Internshala and LetsIntern.</p>
+        </div>
+        <div class="feature-box">
+          <h3>🚀 Build Your Career Early</h3>
+          <p>Gain real-world experience and boost your resume with early exposure.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Internship Section -->
+    <section class="internships">
+  <h2>Internships</h2>
+
+  <!-- Present Internships -->
+  <div class="card">
+    <h3>Software Engineer Intern – Microsoft</h3>
+    <p><strong>Duration:</strong> 2–3 months | <strong>Stipend:</strong> ₹1,00,000 per month</p>
+    <p><strong>Graduation Year:</strong> 2026/2027</p>
+    <p><strong>Location:</strong> Multiple Locations in India</p>
+    <p><strong>Skills:</strong> Data Structures, Algorithms, Problem Solving, C++/Java/Python</p>
+    <a href="https://careers.microsoft.com/v2/global/en/exploremicrosoft" target="_blank" rel="noopener noreferrer">
+      Apply on Microsoft Careers
+    </a>
+  </div>
+
+  <div class="card">
+   <h3>Frontend Developer Intern – Google</h3>
+    <p><strong>Duration:</strong> 10–12 weeks | <strong>Stipend:</strong> Competitive</p>
+    <p><strong>Graduation Year:</strong> 2026/2027</p>
+    <p><strong>Location:</strong> Bangalore/Hyderabad</p>
+    <p><strong>Skills:</strong> JavaScript, React, HTML, CSS</p>
+    <a href="https://www.google.com/about/careers/applications/buildyourfuture/internships" target="_blank" rel="noopener noreferrer">
+    Apply on Google Careers
+    </a>
+  </div>
+
+  <div class="card">
+    <h3>Data Analyst Intern – Amazon</h3>
+    <p><strong>Duration:</strong> 12 weeks | <strong>Stipend:</strong> ₹70,000 per month</p>
+    <p><strong>Graduation Year:</strong> 2025/2026</p>
+    <p><strong>Location:</strong> Bangalore, India</p>
+    <p><strong>Skills:</strong> SQL, Python, Excel, Data Visualization</p>
+    <a href="https://www.amazon.jobs/content/en/career-programs/university/internships-for-students" target="_blank" rel="noopener noreferrer">
+    Apply on Amazon Jobs
+    </a>
+  </div>
+  
+  <div class="card">
+    <h3>Research Intern – Adobe</h3>
+    <p><strong>Duration:</strong> 3–6 months | <strong>Stipend:</strong> ₹80,000 per month</p>
+    <p><strong>Graduation Year:</strong> 2026/2027</p>
+    <p><strong>Location:</strong> Noida, Bangalore</p>
+    <p><strong>Skills:</strong> Machine Learning, Python, Deep Learning, Publications (Preferred)</p>
+    <a href="https://research.adobe.com/careers/internships/" target="_blank" rel="noopener noreferrer">
+    Apply on Adobe Research Internships
+    </a>
+  </div>
+
+  <div class="card">
+    <h3>Data Analytics Intern – Google</h3>
+    <p><strong>Duration:</strong> 10–12 weeks | <strong>Stipend:</strong> Competitive</p>
+    <p><strong>Graduation Year:</strong> 2026</p>
+    <p><strong>Location:</strong> Bangalore, Hyderabad</p>
+    <p><strong>Skills:</strong> SQL, Python, Data Visualization, Problem Solving</p>
+    <a href="https://careers.google.com/jobs/results/?target_level=INTERN_AND_APPRENTICE" target="_blank" rel="noopener noreferrer">
+    Apply on Google Careers
+    </a>
+  </div>
+
+  <!-- Future Internships -->
+  <div class="card">
+    <h3>Upcoming: AI/ML Intern – NVIDIA</h3>
+    <p><strong>Expected Duration:</strong> Summer 2025 | <strong>Stipend:</strong> Competitive</p>
+    <p><strong>Graduation Year:</strong> 2026/2027</p>
+    <p><strong>Location:</strong> Pune / Bangalore</p>
+    <p><strong>Skills:</strong> Machine Learning, Python, TensorFlow / PyTorch</p>
+    <p><em>Applications expected to open late 2024 / early 2025</em></p>
+    <a href="https://www.nvidia.com/en-us/about-nvidia/careers/university-recruiting/" target="_blank" rel="noopener noreferrer">
+    Check NVIDIA University Recruiting
+    </a>
+  </div>
+
+  <div class="card">
+    <h3>Upcoming: Cloud Intern – AWS</h3>
+    <p><strong>Expected Duration:</strong> Summer 2025 | <strong>Stipend:</strong> Competitive</p>
+    <p><strong>Graduation Year:</strong> 2026</p>
+    <p><strong>Location:</strong> Hyderabad / Remote</p>
+    <p><strong>Skills:</strong> AWS Basics, Networking, Python / Java</p>
+    <p><em>Applications expected to open early 2025</em></p>
+    <a href="https://www.amazon.jobs/content/en/teams/amazon-web-services/internships" target="_blank" rel="noopener noreferrer">
+    Explore AWS Internships
+    </a>
+  </div>
+
+  <div class="card">
+    <h3>Open Source Internships (GSoC 2026)</h3>
+    <p><strong>Duration:</strong> 3 months | <strong>Stipend:</strong> Varies by Organization</p>
+    <p><strong>Graduation Year:</strong> 2026/2027</p>
+    <p><strong>Location:</strong> Remote</p>
+    <p><strong>Skills:</strong> GitHub, Open Source Contributions, C++/Python/JavaScript</p>
+    <a href="https://summerofcode.withgoogle.com/" target="_blank" rel="noopener noreferrer">
+    Learn More & Apply via GSoC
+    </a>
+  </div>
+
+  <div class="card">
+    <h3>Flipkart GRiD Internship Challenge 2025</h3>
+    <p><strong>Duration:</strong> 2 months | <strong>Stipend:</strong> ₹60,000 per month + PPO</p>
+    <p><strong>Graduation Year:</strong> 2026</p>
+    <p><strong>Location:</strong> Bangalore (Hybrid)</p>
+    <p><strong>Skills:</strong> DSA, Competitive Coding, DBMS</p>
+    <a href="https://www.flipkartcareers.com/" target="_blank" rel="noopener noreferrer">
+    Register via Flipkart Careers Portal
+    </a>
+  </div>
+
+  <div class="card">
+    <h3>Amazon Summer SDE Intern (2026 Intake)</h3>
+    <p><strong>Duration:</strong> May–July 2026 | <strong>Stipend:</strong> ₹90,000 per month</p>
+    <p><strong>Graduation Year:</strong> 2027</p>
+    <p><strong>Location:</strong> Hyderabad, Bangalore, Chennai</p>
+    <p><strong>Skills:</strong> Java, OOP, Problem Solving, System Design Basics</p>
+    <a href="https://www.amazon.jobs/teams/internships-for-students" target="_blank" rel="noopener noreferrer">
+    Register for Amazon University Talent Community
+    </a>
+  </div>
+</section>
+
+
+    <!-- Contact Section -->
+    <section class="contact">
+      <h2>Contact Us</h2>
+      <p>Have suggestions or want to share a new internship? Send us a message below.</p>
+
+      <form action="https://api.web3forms.com/submit" method="POST">
+  <!-- Web3Forms Access Key -->
+  <input type="hidden" name="access_key" value="40fd35a7-a205-4f4a-979f-273d04a51cfd">
+
+  <label for="name">Name</label>
+  <input type="text" id="name" name="name" placeholder="Your Name" required>
+
+  <label for="email">Email</label>
+  <input type="email" id="email" name="email" placeholder="you@example.com" required>
+
+  <label for="message">Message</label>
+  <textarea id="message" name="message" rows="5" placeholder="Your message..." required></textarea>
+
+  <!-- Optional: Redirect after submission -->
+  <!-- <input type="hidden" name="redirect" value="https://yourwebsite.com/thank-you.html"> -->
+
+  <button type="submit">Send</button>
+</form>
+    </section>
+  </div>
+
+  <footer>
+    <p>Internship Finder</p>
+  </footer>
+
+</body>
+</html>
